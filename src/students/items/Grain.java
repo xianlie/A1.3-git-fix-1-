@@ -1,7 +1,7 @@
 package students.items;
 
 // This class represents a specific type of food: Grain.
-class Grain extends Food{
+public class Grain extends Food{
 	private static int generationCount = 0; // Count of the number of Grain objects generated
 	
 	// This constructor creates a Grain object.

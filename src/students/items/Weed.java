@@ -1,6 +1,6 @@
 package students.items;
 
-class Weed extends Item {
+public class Weed extends Item {
 	// This constructor create a Weed object.
 	public Weed() {
 		super(-1, -1, -1); // Initializes with arbitrary values.

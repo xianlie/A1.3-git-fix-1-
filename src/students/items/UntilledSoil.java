@@ -1,6 +1,6 @@
 package students.items;
 
-class UntilledSoil extends Item {
+public class UntilledSoil extends Item {
 	// This constructor create an UntilledSoil object.
 	public UntilledSoil() {
 		super(-1, -1, -1); // Initializes with arbitrary values。
