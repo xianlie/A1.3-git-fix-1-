@@ -44,6 +44,11 @@ public abstract class Item {
         Item item = (Item) obj;
         return age == item.age && maturationAge == item.maturationAge &&
                 deathAge == item.deathAge && monetaryValue == item.monetaryValue;
-    }
+    }        
+}
 
+abstract class Food extends Item {
+    public Food(int maturationAge, int deathAge, int monetaryValue) {
+        super(maturationAge, deathAge, monetaryValue);
+    }
 }
