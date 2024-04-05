@@ -40,9 +40,10 @@ public abstract class Item {
         }
     }
 
+    // This abstract method needs to be implemented by subclasses to create a custom string representation.
     public abstract String toString();
     
-    
+    // This method compares item based on their attributes
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
