@@ -1,6 +1,8 @@
 package students.items;
 
-public class Item {
+import java.util.Objects;
+
+public abstract class Item {
 	protected int age;
     protected int maturationAge;
     protected int deathAge;
@@ -33,5 +35,15 @@ public class Item {
         }
     }
 
-	
+    public abstract String toString();
+    
+    
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Item item = (Item) obj;
+        return age == item.age && maturationAge == item.maturationAge &&
+                deathAge == item.deathAge && monetaryValue == item.monetaryValue;
+    }
+
 }
