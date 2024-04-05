@@ -1,6 +1,6 @@
 package students.items;
 
-class Soil extends Item{
+public class Soil extends Item{
 	// This constructor create a Soil object.
 	public Soil() {
 		super(-1, -1, 0); // Initializes with arbitrary values。

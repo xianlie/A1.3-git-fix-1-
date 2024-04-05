@@ -13,9 +13,9 @@ public class Marker {
 		//you should NOT be able to make an Item - following line shouldn't compile if uncommented
 		//new Item(0, 0, 0);
 
-		System.out.println(Apples.getGenerationCount()); // should print 0
-		Apples a = new Apples();
-		System.out.println(Apples.getGenerationCount()); // should print 1
+		System.out.println(Apple.getGenerationCount()); // should print 0
+		Apple a = new Apple();
+		System.out.println(Apple.getGenerationCount()); // should print 1
 		System.out.println(a); // should print "a"
 		System.out.println(a.getValue()); // should print 0
 		a.setAge(5);

@@ -1,7 +1,7 @@
 package students.items;
 
 //This class represents a specific type of food: Apple.
-class Apple extends Food{
+public class Apple extends Food{
 	private static int generationCount = 0; // Count of the number of Apple objects generated
 	
 	// This constructor creates a Apple object.
@@ -21,7 +21,7 @@ class Apple extends Food{
 		if (age < maturationAge) {
 			return "a"; // Represents immature Apple as lowercase 'a'.
 		} else {
-			return "A"; // Represents mature Apple as lowercase 'A'.
+			return "A"; // Represents mature Apple as uppercase 'A'.
 		}
 	}
-}
+}	
