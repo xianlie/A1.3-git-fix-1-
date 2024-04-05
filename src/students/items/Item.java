@@ -52,31 +52,9 @@ public abstract class Item {
     }        
 }
 
-abstract class Food extends Item {
-    public Food(int maturationAge, int deathAge, int monetaryValue) {
-        super(maturationAge, deathAge, monetaryValue);
-    }
-}
 
-class Grain extends Food{
-	private static int generationCount = 0;
+
+
+
 	
-	public Grain() {
-		super(2, 6 ,2);
-		generationCount++;
-	}
-	
-	public static int getGenerationCount() {
-		return generationCount;
-	}
-	
-	@Override
-	public String toString() {
-		if(age < maturationAge) {
-			return "g";
-		} else {
-			return "G";
-		}
-	}
-}
 
