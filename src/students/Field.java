@@ -66,7 +66,7 @@ public class Field {
 	
 	public int getValue() {
 		int totalValue = 0;
-		for (item[] row : grid) {
+		for (Item[] row : grid) {
 			for (Item item : row) {
 				totalValue += item.getValue();
 			}
@@ -74,6 +74,42 @@ public class Field {
 		return totalValue;
 	}
 	
+
+	public String getSummary() {
+		int apple = 0;
+		int grain = 0;
+		int soil = 0;
+		int untilledSoil = 0;
+		int weed = 0;
+		
+		for (Item[] row : grid) {
+			for(Item item : row) {
+				if (item instanceof Apple) {
+					apple++;					
+				} else if (item instanceof Grain) {
+					grain++;
+				} else if (item instanceof Soil) {
+					soil++;
+				} else if (item instanceof UntilledSoil) {
+					untilledSoil++;
+				} else if (item instanceof Weed) {
+					weed++;
+				}
+			}
+		}
+		
+		StringBuilder summary = new StringBuilder();
+		summary.append("Apple:        ").append(apple).append("\n");
+		summary.append("Grain:        ").append(grain).append("\n");
+		summary.append("Soil:         ").append(soil).append("\n");
+		summary.append("Untilled:     ").append(weed).append("\n");
+		summary.append("Weed:         ").append(apple).append("\n");
+		summary.append("For a total of $").append(getValue()).append("\n");
+		summary.append("Total Apple created:     ").append(Apple.getGenerationCount()).append("\n");
+		summary.append("Total Grain created:     ").append(Grain.getGenerationCount()).append("\n");
+		
+		return summary.toString();
+	}
 }
 
 
