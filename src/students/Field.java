@@ -51,7 +51,18 @@ public class Field {
 		return x >= 0 && x < height && y >= 0 && y < width;
 	}
 	
+	public Item get(int x, int y) {
+		if (isValidPosition(x, y)) {
+			return grid[x][y];
+		}
+		return null;
+	}
 	
+	public void plant(int x, int y, Item item) {
+		if (isValidPosition(x,y)) {
+			grid[x][y] = item;
+		}
+	}
 }
 
 
