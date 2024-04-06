@@ -16,6 +16,16 @@ public class Farm {
 	
 	public void run()
 	{
+		System.out.println(field);
+		
+		System.out.println("Bank balance :" + bankBalance + "\n");
+		System.out.println("Enter your next action:");
+		System.out.println(" t x y: till");
+		System.out.println(" h x y: harvest");
+		System.out.println(" p x y: plant");
+		System.out.println(" s: field summary");
+		System.out.println(" w: wait");
+		System.out.println(" q: quit");
 	}
 	
 }
