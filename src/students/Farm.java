@@ -16,16 +16,56 @@ public class Farm {
 	
 	public void run()
 	{
+		Scanner scanner = new Scanner(System.in);
+		String action;
+		
 		System.out.println(field);
 		
-		System.out.println("Bank balance :" + bankBalance + "\n");
-		System.out.println("Enter your next action:");
-		System.out.println(" t x y: till");
-		System.out.println(" h x y: harvest");
-		System.out.println(" p x y: plant");
-		System.out.println(" s: field summary");
-		System.out.println(" w: wait");
-		System.out.println(" q: quit");
-	}
+		do {
+			System.out.println("Bank balance :" + bankBalance + "\n");
+			System.out.println("Enter your next action:");
+			System.out.println(" t x y: till");
+			System.out.println(" h x y: harvest");
+			System.out.println(" p x y: plant");
+			System.out.println(" s: field summary");
+			System.out.println(" w: wait");
+			System.out.println(" q: quit");
+			
+		
+			action = scanner.nextLine().trim();
+				
+			switch (action.charAt(0)) {
+				case 't':
+					handleTillAction(action);
+					break;
+				case 'h':
+					handleHarvestAction(action);
+					break;
+				case 'p':
+					handlePlantAction(action);
+					break;
+				case 's':
+					System.out.println(field.getSummary());
+					break;
+				case 'w':
+					field.tick();
+					break;
+				case 'q':
+					System.out.println("Quitting the game... ");
+					break;
+				default:
+					System.out.println("Invalid action, please try again.");				
+					}
+			} while (!action.equals("q"));
+		
+			scanner.close();
+		}
+	private void handleTillAction(String action) {
+		}
 	
-}
+	private void handleHarvestAction(String action) {
+		}
+	
+	private void handlePlantAction(String action) {
+		}
+	}
