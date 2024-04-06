@@ -114,16 +114,16 @@ public class Field {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("");
+		sb.append("  ");
 		for (int i = 1; i <= width; i++) {
 			
-			sb.append(i).append("");
+			sb.append(i).append(" ");
 		}
 		sb.append("\n");
 		for (int i=0; i < height ; i++) {
-			sb.append(i+1).append("");
+			sb.append(i+1).append(" ");
 			for (int j = 0; j < width; j++) {
-				sb.append(grid[i][j]).append("");
+				sb.append(grid[i][j]).append(" ");
 			}
 			sb.append("\n");
 		}
