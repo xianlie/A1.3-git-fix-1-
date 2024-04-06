@@ -63,6 +63,17 @@ public class Field {
 			grid[x][y] = item;
 		}
 	}
+	
+	public int getValue() {
+		int totalValue = 0;
+		for (item[] row : grid) {
+			for (Item item : row) {
+				totalValue += item.getValue();
+			}
+		}
+		return totalValue;
+	}
+	
 }
 
 
