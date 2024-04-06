@@ -39,5 +39,19 @@ public class Field {
 			}
 		  }
 		}
-	}		
+	}
+	
+	public void till(int x, int y) {
+		if (isValidPosition(x,y)) {
+			grid[x][y] = new Soil();
+		}
+	}
+	
+	private boolean isValidPosition(int x, int y) {
+		return x >= 0 && x < height && y >= 0 && y < width;
+	}
+	
+	
 }
+
+
