@@ -52,41 +52,48 @@ public class Field {
 		}
 	}
 	
+	// Method to check if a position is valid within the field grid
 	private boolean isValidPosition(int x, int y) {
 		return x >= 0 && x < height && y >= 0 && y < width;
 	}
 	
+	// Method to get the item at a specified position
 	public Item get(int x, int y) {
 		if (isValidPosition(x, y)) {
-			return grid[x][y];
+			return grid[x][y]; // Return the item at the position
 		}
 		return null;
 	}
 	
+	// Method to plant an item at a specified position
 	public void plant(int x, int y, Item item) {
 		if (isValidPosition(x,y)) {
-			grid[x][y] = item;
+			grid[x][y] = item; // Place the item at the specified position
 		}
 	}
 	
+	// This method calculate the total value of all items on the field
 	public int getValue() {
 		int totalValue = 0;
+		// Looping through each grid cell and accumulating the value of all items
 		for (Item[] row : grid) {
 			for (Item item : row) {
-				totalValue += item.getValue();
+				totalValue += item.getValue(); // Add the value of the item
 			}
 		}
-		return totalValue;
+		return totalValue; // Return the total value
 	}
 	
-
+    // This method generate a summary of the field's contents
 	public String getSummary() {
+		// Variables to store counts of different type of items
 		int apple = 0;
 		int grain = 0;
 		int soil = 0;
 		int untilledSoil = 0;
 		int weed = 0;
 		
+		// Looping through each grid cell and count the number of each item type
 		for (Item[] row : grid) {
 			for(Item item : row) {
 				if (item instanceof Apple) {
@@ -103,6 +110,7 @@ public class Field {
 			}
 		}
 		
+		// Build a summary string with item counts and total value
 		StringBuilder summary = new StringBuilder();
 		summary.append("Apple:        ").append(apple).append("\n");
 		summary.append("Grain:        ").append(grain).append("\n");
@@ -116,6 +124,7 @@ public class Field {
 		return summary.toString();
 	}
 	
+	//This method generate a string representation of the field
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
@@ -132,7 +141,7 @@ public class Field {
 			}
 			sb.append("\n");
 		}
-		return sb.toString();
+		return sb.toString(); // Return the string representation of the field
 	}
 }
 
