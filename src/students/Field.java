@@ -115,8 +115,8 @@ public class Field {
 		summary.append("Apple:        ").append(apple).append("\n");
 		summary.append("Grain:        ").append(grain).append("\n");
 		summary.append("Soil:         ").append(soil).append("\n");
-		summary.append("Untilled:     ").append(weed).append("\n");
-		summary.append("Weed:         ").append(apple).append("\n");
+		summary.append("Untilled:     ").append(untilledSoil).append("\n");
+		summary.append("Weed:         ").append(weed).append("\n");
 		summary.append("For a total of $").append(getValue()).append("\n");
 		summary.append("Total Apple created:     ").append(Apple.getGenerationCount()).append("\n");
 		summary.append("Total Grain created:     ").append(Grain.getGenerationCount()).append("\n");

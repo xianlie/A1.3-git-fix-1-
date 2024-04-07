@@ -116,7 +116,7 @@ public class Farm {
 						item = new Apple();
 						bankBalance -= 2;
 					} else {
-						System.out.println("Insufficient funds to buy an apple.");
+						System.out.println("Insufficient funds to buy an apple. \n");
 						return;
 					}
 				} else if (choice.equals("g")) {
@@ -124,11 +124,11 @@ public class Farm {
 						item = new Grain();
 						bankBalance -= 1;						
 					} else {
-						System.out.println("Insufficient funds to buy grain.");
+						System.out.println("Insufficient funds to buy grain. \n");
 						return;
 					}
 				} else {
-					System.out.println("Invalid choice, please try again.");
+					System.out.println("Invalid choice, please try again. \n");
 					return;
 				}
 				field.plant(y,x,item);
