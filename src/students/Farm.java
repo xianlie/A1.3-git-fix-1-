@@ -22,7 +22,7 @@ public class Farm {
 		System.out.println(field);
 		
 		do {
-			System.out.println("Bank balance :" + bankBalance + "\n");
+			System.out.println("Bank balance : $" + bankBalance + "\n");
 			System.out.println("Enter your next action:");
 			System.out.println(" t x y: till");
 			System.out.println(" h x y: harvest");
@@ -83,6 +83,7 @@ public class Farm {
 				int y = Integer.parseInt(parts[2]) - 1;
 				Item item = field.get(y,x);
 				if (item instanceof Food && item.age >= ((Food) item).maturationAge) {
+					System.out.println("Sold " + item + " for " + item.getValue() +"\n");
 					bankBalance += item.getValue();
 					field.plant(y, x, new Soil());
 					field.tick();

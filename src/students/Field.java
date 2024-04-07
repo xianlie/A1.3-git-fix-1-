@@ -33,7 +33,7 @@ public class Field {
 				item.tick();
 				
 				// Randomly generate weeds on soil cells
-				if (item instanceof Soil && random.nextDouble() < 0.2) {
+				if (item instanceof Soil && random.nextDouble() < 0.02) {
 					grid[i][j] = new Weed(); // Replace the soil with weed
 				}
 			
