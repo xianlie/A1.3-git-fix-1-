@@ -3,8 +3,8 @@ package students.items;
 import java.util.Objects;
 
 public abstract class Item {
-	protected int age;
-    protected int maturationAge;
+	public int age;
+    public int maturationAge;
     protected int deathAge;
     protected int monetaryValue;
     
