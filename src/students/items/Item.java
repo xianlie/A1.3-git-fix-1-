@@ -4,9 +4,9 @@ import java.util.Objects;
 
 public abstract class Item {
 	public int age;
-    public int maturationAge;
-    protected int deathAge;
-    protected int monetaryValue;
+    public final int maturationAge;
+    public final int deathAge;
+    public final int monetaryValue;
     
     // This is a constructor for creating an item with a specified maturation age, death age and monetary value.
     public Item(int maturationAge, int deathAge, int monetaryValue) {
@@ -28,7 +28,7 @@ public abstract class Item {
     
     // This method checks whether the item has died.
     public boolean died() {
-        return age > deathAge;
+        return deathAge > age;
     }
     
     // This method retrieves the monetary value of the item.

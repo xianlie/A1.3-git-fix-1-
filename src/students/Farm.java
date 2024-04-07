@@ -68,6 +68,7 @@ public class Farm {
 					int x = Integer.parseInt(parts[1]) - 1;
 					int y = Integer.parseInt(parts[2]) - 1;
 					field.till(y,x);
+					field.tick();
 				} catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
 					System.out.println("Invalid location, please try again.");
 				}
@@ -84,6 +85,7 @@ public class Farm {
 				if (item instanceof Food && item.age >= ((Food) item).maturationAge) {
 					bankBalance += item.getValue();
 					field.plant(y, x, new Soil());
+					field.tick();
 				} else {
 					System.out.println("Nothing to harvest at this location or not yet mature. \n");
 				} 
@@ -128,8 +130,8 @@ public class Farm {
 					System.out.println("Invalid choice, please try again.");
 					return;
 				}
-				
-				field.plant(y,x,item);			
+				field.plant(y,x,item);
+				field.tick();
 			} catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
 				System.out.println("Invalid location, please try again.");
 			}

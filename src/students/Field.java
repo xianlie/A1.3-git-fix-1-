@@ -31,17 +31,17 @@ public class Field {
 			for(int j = 0; j < width; j++) {
 				Item item = grid[i][j]; // Get the item at the current position
 				item.tick();
+				
+				// Randomly generate weeds on soil cells
+				if (item instanceof Soil && random.nextDouble() < 0.2) {
+					grid[i][j] = new Weed(); // Replace the soil with weed
+				}
 			
-			// Randomly generate weeds on soil cells
-			if (item instanceof Soil && random.nextDouble() < 0.2) {
-				grid[i][j] = new Weed(); // Replace the soil with weed
-			}
-			
-			// Replace an item that has already died with untilled soil
-			if (item.died()) {
-				grid[i][j] = new UntilledSoil();
-			}
-		  }
+				// Replace an item that has already died with untilledSoil
+				/*if (item.died()) {
+					grid[i][j] = new UntilledSoil();
+				}*/
+		   }
 		}
 	}
 	
