@@ -7,7 +7,7 @@ import students.items.*;
 public class Farm {
 	private Field field; // Represents the field where farming activities occur.
 	private int bankBalance; // Represents the available funds for the farm.
-	
+
 	// Constructor to initialize the farm with a field of specified dimensions and starting funds.
 	public Farm(int fieldWidth, int fieldHeight, int startingFunds)
 	{
@@ -24,6 +24,12 @@ public class Farm {
 		System.out.println(field); // Display initial state of the field.
 		
 		do {
+			 // Check for pest event
+            if (PestEvent.occurs()) {
+                System.out.println("Pest attack occurred! ");
+                System.out.println("Untilled soil occurred randomly \n");
+                field.pestAttack();
+            }
 			// Display options and prompt use for action.
 			System.out.println("Bank balance : $" + bankBalance + "\n");
 			System.out.println("Enter your next action:");

@@ -5,6 +5,7 @@ import java.util.Random;
 import students.items.*;
 
 public class Field {
+	private static final boolean True = false;
 	private Item[][] grid; // This is a 2D array that represents the field grid.
 	private int height; // Height of the field.
 	private int width; // width of the field.
@@ -44,6 +45,20 @@ public class Field {
 		   }
 		}
 	}
+	
+	public void pestAttack() {
+		for (int i = 0; i < height; i++) {
+			for(int j = 0; j < width; j++) {
+				Item item = grid[i][j]; // Get the item at the current position
+				item.tick();
+				if (PestEvent.occurs() == True && random.nextDouble() < 0.1) {
+					grid[i][j] = new UntilledSoil();
+					}
+				}
+			}
+		}
+			
+			
 	
 	// This method involves tilling the soil at a specified position.
 	public void till(int x, int y) {
