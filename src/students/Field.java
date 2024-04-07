@@ -47,19 +47,20 @@ public class Field {
 	}
 	
 	public void pestAttack() {
+		// Loop through each cell in the field.
 		for (int i = 0; i < height; i++) {
 			for(int j = 0; j < width; j++) {
 				Item item = grid[i][j]; // Get the item at the current position
 				item.tick();
+				// Check if a pest event occurs and if the random chance is met
 				if (PestEvent.occurs() == True && random.nextDouble() < 0.1) {
-					grid[i][j] = new UntilledSoil();
+					grid[i][j] = new UntilledSoil(); // Replace the item with untilledSoil.
 					}
 				}
 			}
 		}
 			
 			
-	
 	// This method involves tilling the soil at a specified position.
 	public void till(int x, int y) {
 		if (isValidPosition(x,y)) {
