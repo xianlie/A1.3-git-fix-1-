@@ -61,6 +61,16 @@ public class Farm {
 			scanner.close();
 		}
 	private void handleTillAction(String action) {
+			String[] parts = action.split(" ");
+			if (parts.length == 3) {
+				try {
+					int x = integer.parseInt(parts[1]) - 1;
+					int y = Integer.parseInt(parts[2]) - 1;
+					field.till(x,y);
+				} catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
+					System.out.println("Invalid location, please try again.");
+				}
+			}
 		}
 	
 	private void handleHarvestAction(String action) {

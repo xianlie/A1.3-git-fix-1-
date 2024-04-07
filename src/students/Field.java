@@ -5,18 +5,19 @@ import java.util.Random;
 import students.items.*;
 
 public class Field {
-	private Item[][] grid;
-	private int height;
-	private int width;
-	private Random random;
+	private Item[][] grid; // This is a 2D array that represents the field grid.
+	private int height; // Height of the field.
+	private int width; // width of the field.
+	private Random random; // a random object used for generating random events.
 	
-	
+	// A constructor used to initialize a field with soil and set its dimensions.
 	public Field(int height, int width){
 		this.height = height;
 		this.width = width; 
-		this.grid = new Item[height][width];
-		this.random = new Random();
+		this.grid = new Item[height][width]; // Initialize the grid
+		this.random = new Random(); // Initialize the random object
 		
+		// Fill the grid and soil objects initially
 		for (int i = 0; i < height; i++) {
 			for (int j = 0; j < width; j++) {
 				grid[i][j] = new Soil();
@@ -25,15 +26,18 @@ public class Field {
 	}
 		
 	public void tick() {
+		// Looping through each grid cell
 		for (int i = 0; i < height; i++) {
 			for(int j = 0; j < width; j++) {
-				Item item = grid[i][j];
+				Item item = grid[i][j]; // Get the item at the current position
 				item.tick();
 			
+			// Randomly generate weeds on soil cells
 			if (item instanceof Soil && random.nextDouble() < 0.2) {
-				grid[i][j] = new Weed();
+				grid[i][j] = new Weed(); // Replace the soil with weed
 			}
 			
+			// Replace an item that has already died with untilled soil
 			if (item.died()) {
 				grid[i][j] = new UntilledSoil();
 			}
@@ -41,9 +45,10 @@ public class Field {
 		}
 	}
 	
+	// This method involves tilling the soil at a specified position.
 	public void till(int x, int y) {
 		if (isValidPosition(x,y)) {
-			grid[x][y] = new Soil();
+			grid[x][y] = new Soil(); // Replace the item at the position with soil
 		}
 	}
 	
